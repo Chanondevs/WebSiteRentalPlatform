@@ -1,0 +1,25 @@
+{
+  "name": "website-rental-platform",
+  "version": "0.1.0-beta",
+  "private": true,
+  "packageManager": "bun@1.2.0",
+  "workspaces": ["apps/*", "packages/*", "services/*"],
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "typecheck": "turbo typecheck",
+    "dev:web": "bun --cwd apps/web dev",
+    "dev:api": "bun --cwd apps/api dev",
+    "dev:worker": "bun --cwd services/worker dev",
+    "db:generate": "bun --cwd packages/database db:generate",
+    "db:migrate": "bun --cwd packages/database db:migrate",
+    "db:studio": "bun --cwd packages/database db:studio"
+  },
+  "devDependencies": {
+    "turbo": "^2.5.0",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.10"
+  }
+}
